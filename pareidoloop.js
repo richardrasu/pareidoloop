@@ -252,7 +252,7 @@ var Pareidoloop = new function() {
         } else {
             outCtx = canvasOut.getContext("2d");
         }
-        var outScale = settings.OUTPUT_SIZE/settings.CANVAS_SIZE;
+        var outScale = settings.OUTPUT_SIZE/ (settings.CANVAS_SIZE + 60);
         outCtx.scale(outScale, outScale);
         return outCtx;
     }
