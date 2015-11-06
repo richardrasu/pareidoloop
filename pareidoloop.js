@@ -10,11 +10,11 @@ var Pareidoloop = new function() {
 
     var settings = {
        CANVAS_SIZE : 50,
-       OUTPUT_SIZE : 100,
+       OUTPUT_SIZE : 1920,
        OUTPUT_FORMAT : "png",
        INITIAL_POLYS : 60,
        MAX_POLYS : 1000,
-       MAX_GENERATIONS : 6000,
+       MAX_GENERATIONS : 15000,
        MAX_GENS_WITHOUT_IMPROVEMENT : 1000,
        CONFIDENCE_THRESHOLD : 30,
        QUAD_ADD_STDDEV : 0.5,
@@ -89,11 +89,11 @@ var Pareidoloop = new function() {
     };
 
     var initCanvas = function(canvas, size) {
-
-        canvas.width = canvas.height = size;
+        var padding_size = size + 60;
+        canvas.width = canvas.height = padding_size;
         
         // set origin at center
-        canvas.getContext("2d").setTransform(1, 0, 0, 1, size/2, size/2);
+        canvas.getContext("2d").setTransform(1, 0, 0, 1, padding_size/2, padding_size/2);
     }
 
     var clearCanvas = function(canvas) {
